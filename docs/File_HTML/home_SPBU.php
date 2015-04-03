@@ -29,7 +29,7 @@ if (ISSET($Username) && ISSET($Password))
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Bootstrap, from Twitter</title>
+    <title>Home SPBU</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -76,21 +76,21 @@ if (ISSET($Username) && ISSET($Password))
 			  <li><a href="#kuliner">Kuliner</a></li>
 			  <li><a href="#bengkel">Bengkel</a></li>
 				<form class="navbar-form pull-right">
-				<input class="span2" type="text" name="Username" value="<?php echo $_POST['username']?>">
-				<input class="span2" type="password" name="Password" value="<?php echo $_POST['password']?>">
+				<input class="span2" type="text" placeholder="Username" value="<?php echo $_POST['username']?>">
+				<input class="span2" type="password" placeholder="Password" value="<?php echo $_POST['password']?>">
 				<button type="submit" class="btn">Sign in</button>
 				</form>
         </div>
       </div>
     </div>
 			
-	
 		<ul class="nav">
 		<li class="active">
 		<a href="#">Beranda</a>
 		</li>
 		<li><a href="#">Pencarian</a></li>
 		</ul>
+
 
     <div class="container">
 
@@ -118,7 +118,7 @@ if (ISSET($Username) && ISSET($Password))
           <h2>SPBU 51.601.77</h2>
           <p>Jl. Dr. Soetomo </p>
 		  </p>Surabaya, Jawa Timur, Indonesia</p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
+          <p><a class="btn" href="http://localhost:8080/bootstrap-2.3.2%20Original/docs/File_HTML/Informasi_SPBU1.html">View Detail &raquo; </a></p>
         </div>
       </div>
 

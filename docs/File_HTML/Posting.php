@@ -1,35 +1,8 @@
-<?php 
-require_once "function.php"; 
-$username = $_POST['username'];
-$password = md5($_POST['password']);
-
-if (ISSET($Username) && ISSET($Password))
-{
-	$cekuser = "select * from enkripsi where username = '$psername' and password = '$password'";
-	$cekuser_query = mysql_query($cekuser);
-	$countuser = mysql_num_rows($cekuser_query);
-
-	if ($countuser >= 1)
-		{
-			// echo "usernya ada";
-			$login = 1;
-			$_SESSION['login'] = $username ;
-			header("location: user.php");
-		}
-
-	else
-		{
-			// echo "usernya tidak ada";
-			$login = 0;
-		}
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Bootstrap, from Twitter</title>
+    <title>Posting</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -68,6 +41,10 @@ if (ISSET($Username) && ISSET($Password))
             <span class="icon-bar"></span>
           </button>
           <a class="brand" href="#">Asik Surabaya</a>
+		  <div class="nav-collapse collapse">
+            <p class="navbar-text pull-right">
+              <a href="#" class="navbar-link">Username</a>
+            </p>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="active"><a href="#">SPBU</a></li>
@@ -75,52 +52,67 @@ if (ISSET($Username) && ISSET($Password))
               <li><a href="#sport">Sport Center</a></li>
 			  <li><a href="#kuliner">Kuliner</a></li>
 			  <li><a href="#bengkel">Bengkel</a></li>
-				<form class="navbar-form pull-right">
-				<input class="span2" type="text" name="Username" value="<?php echo $_POST['username']?>">
-				<input class="span2" type="password" name="Password" value="<?php echo $_POST['password']?>">
-				<button type="submit" class="btn">Sign in</button>
-				</form>
+			  </div>
         </div>
       </div>
     </div>
-			
 	
 		<ul class="nav">
 		<li class="active">
 		<a href="#">Beranda</a>
 		</li>
 		<li><a href="#">Pencarian</a></li>
+		<li><a href="#">Posting</a></li>
 		</ul>
+		</div>
+		<hr>
 
-    <div class="container">
-
-      <!-- Main hero unit for a primary marketing message or call to action -->
-      <div class="hero-unit">
-        <h1>Sistem Informasi SPBU</h1>
-        <p>Sistem Informasi SPBU berisi informasi mengenai SPBU yang ada di Surabaya. Mulai dari lokasi SPBU hingga fasilitas yang dimiliki. Sistem Informasi ini akan memudahkan bagi Anda yang sedang mencari SPBU terdekat dari lokasi Anda saat itu.</p>
-      </div>
-
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="span4">
-          <h2>SPBU 51.601.65</h2>
-          <p> Jl. Raya Jemursari No. 113-123 </p>
-		  </p> Surabaya, Jawa Timur, Indonesia </p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-        </div>
-        <div class="span4">
-          <h2>SPBU 51.601.66</h2>
-          <p>Jl. Dupak No. 15 </p>
-		  </p>Surabaya, Jawa Timur, Indonesia </p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-       </div>
-        <div class="span4">
-          <h2>SPBU 51.601.77</h2>
-          <p>Jl. Dr. Soetomo </p>
-		  </p>Surabaya, Jawa Timur, Indonesia</p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-        </div>
-      </div>
+		
+	<form action="action_input.php" method="POST" enctype="multipart/form-data">
+		<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+		<tr>
+			<td height="40">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td><font size="4" color="blue"><b>Menambah Informasi SPBU</b></font></td>
+		</tr>
+		<tr>
+			<td height="36"></td>
+			<td><a href="view_data.php" target="_blank" style="text-decoration:none">View Data</a></td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td height="40">&nbsp;</td>
+			<td>Kode SPBU</td>
+			<td><input type="text" name="Kode SPBU" size="12"></td>
+		</tr>
+		<tr>
+			<td height="40">&nbsp;</td>
+			<td>Lokasi</td>
+			<td><input type="text" name="Lokasi" size="30"></td>
+		</tr>
+		<tr>
+			<td height="40">&nbsp;</td>
+			<td>Fasilitas</td>
+			<td><input type="text" name="Fasilitas" size="30"></td>
+		</tr>
+		<tr>
+			<td height="40">&nbsp;</td>
+			<td>Produk</td>
+			<td><input type="text" name="Produk" size="60"></td>
+		</tr>
+		<tr>
+			<td height="36">&nbsp;</td>
+			<td>Jam Operasional</td>
+			<td><input type="text" name="Jam Operasional" size="12"></td>
+		</tr>
+		<tr>
+			<td height="60">&nbsp;</td>
+			<td>&nbsp;</td>
+			<td><input type="submit" name="submit" value="Posting">&nbsp;&nbsp;&nbsp;
+			<input type="reset" name="reset" value="Reset"></td>
+		</tr>
+		</table>
+	</form>
 
       <hr>
 

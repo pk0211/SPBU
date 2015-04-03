@@ -1,35 +1,8 @@
-<?php 
-require_once "function.php"; 
-$username = $_POST['username'];
-$password = md5($_POST['password']);
-
-if (ISSET($Username) && ISSET($Password))
-{
-	$cekuser = "select * from enkripsi where username = '$psername' and password = '$password'";
-	$cekuser_query = mysql_query($cekuser);
-	$countuser = mysql_num_rows($cekuser_query);
-
-	if ($countuser >= 1)
-		{
-			// echo "usernya ada";
-			$login = 1;
-			$_SESSION['login'] = $username ;
-			header("location: user.php");
-		}
-
-	else
-		{
-			// echo "usernya tidak ada";
-			$login = 0;
-		}
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Bootstrap, from Twitter</title>
+    <title>Komentar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -76,8 +49,8 @@ if (ISSET($Username) && ISSET($Password))
 			  <li><a href="#kuliner">Kuliner</a></li>
 			  <li><a href="#bengkel">Bengkel</a></li>
 				<form class="navbar-form pull-right">
-				<input class="span2" type="text" name="Username" value="<?php echo $_POST['username']?>">
-				<input class="span2" type="password" name="Password" value="<?php echo $_POST['password']?>">
+				<input class="span2" type="text" placeholder="Username">
+				<input class="span2" type="password" placeholder="Password">
 				<button type="submit" class="btn">Sign in</button>
 				</form>
         </div>
@@ -91,36 +64,38 @@ if (ISSET($Username) && ISSET($Password))
 		</li>
 		<li><a href="#">Pencarian</a></li>
 		</ul>
-
-    <div class="container">
-
-      <!-- Main hero unit for a primary marketing message or call to action -->
-      <div class="hero-unit">
-        <h1>Sistem Informasi SPBU</h1>
-        <p>Sistem Informasi SPBU berisi informasi mengenai SPBU yang ada di Surabaya. Mulai dari lokasi SPBU hingga fasilitas yang dimiliki. Sistem Informasi ini akan memudahkan bagi Anda yang sedang mencari SPBU terdekat dari lokasi Anda saat itu.</p>
-      </div>
-
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="span4">
-          <h2>SPBU 51.601.65</h2>
-          <p> Jl. Raya Jemursari No. 113-123 </p>
-		  </p> Surabaya, Jawa Timur, Indonesia </p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-        </div>
-        <div class="span4">
-          <h2>SPBU 51.601.66</h2>
-          <p>Jl. Dupak No. 15 </p>
-		  </p>Surabaya, Jawa Timur, Indonesia </p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-       </div>
-        <div class="span4">
-          <h2>SPBU 51.601.77</h2>
-          <p>Jl. Dr. Soetomo </p>
-		  </p>Surabaya, Jawa Timur, Indonesia</p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
-        </div>
-      </div>
+	<hr>
+	<hr>
+	<hr>
+    <body>
+   <h1>Komentar</h1>
+   <form class="form-horizontal">
+  <div class="control-group">
+    <label class="control-label" for="inputNama">Nama</label>
+    <div class="controls">
+      <input type="text" id="inputNama" placeholder="Nama">
+    </div>
+  </div>
+  <form class="form-horizontal">
+  <div class="control-group">
+    <label class="control-label" for="inputEmail">Email</label>
+    <div class="controls">
+      <input type="text" id="inputEmail" placeholder="Email">
+    </div>
+  </div>
+  <div class="container">
+  <form role="form">
+    <div class="form-group">
+      <label for="comment">Comment:</label>
+      <textarea class="form-control" rows="5" id="comment"></textarea>
+    </div>
+  </form>
+</div>
+  </form>
+  <p><a class="btn" href="#">Kirim Komentar &raquo;</a></p>
+   
+	
+	</body>
 
       <hr>
 
